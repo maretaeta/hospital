@@ -20,12 +20,8 @@ if (isset($_POST['register'])) {
 ?>
 
 <?php
-
-
 include('partials/header.php');
-
 ?>
-
 
 <section class="bg-slate-800 min-h-screen flex items-center justify-center p-5">
     <div class="bg-white relative rounded-2xl shadow-lg max-w-3xl p-8 ">

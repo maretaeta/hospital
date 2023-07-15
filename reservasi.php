@@ -42,7 +42,7 @@ include_once("db/koneksi.php");
                     </div>
                     <div class="mb-3 lg:mb-7">
                         <label>
-                            <p>Kesehatan</p>
+                            <p>Pilih Layanan</p>
                         </label>
                         <select name="usia" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800">
                             <option value="">Pilih Poli</option>
@@ -60,6 +60,18 @@ include_once("db/koneksi.php");
                             <p>Tanggal</p>
                         </label>
                         <input type="text" id="datepicker" placeholder="Select Date" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10  text-lg bg-transparent border border-cyan-800">
+                    </div>
+
+                    <div class="mb-3 lg:mb-7">
+                        <label>
+                            <p>Waktu</p>
+                        </label>
+                        <select name="usia" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800">
+                            <option value="">Pilih Jam</option>
+                            <option value="">08.00 - 11.00 am</option>
+                            <option value="">13.00 - 18.00 pm</option>
+                            <option value="">19.00 - 22.00 pm</option>
+                        </select>
                     </div>
 
                     <button type="submit" class="bg-cyan-800 text-white w-full rounded-full mx-auto py-2 ml-2 mt-3">
