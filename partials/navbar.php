@@ -39,13 +39,7 @@
                             Home
                         </a>
                     </li>
-                    <!-- <li class="hover:text-cyan-600 text-cyan-800 relative cursor-pointer transition-all 
-                 before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-1 before:rounded-full before:opacity-0 before:transition-all
-                 before:duration-500 before:bg-cyan-600  hover:before:w-full hover:before:opacity-100">
-                        <a href="about.php">
-                            About
-                        </a>
-                    </li> -->
+
 
                     <li class="hover:text-cyan-600 text-cyan-800 relative cursor-pointer transition-all 
                  before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-1 before:rounded-full before:opacity-0 before:transition-all
@@ -65,14 +59,7 @@
                 </ul>
             </div>
             <div class="text-gray-900 md:block hidden font-medium rounded-bl-full pt-3 items-center">
-                <!-- <ul class="flex flex-row items-center">
-                    <li class="">
-                        <button class="h-9 text-sm px-2 bg-cyan-800 rounded-full text-white w-24 text-center hover:scale-110">
-                            <a href="login.php"> Sign in</a>
-                        </button>
 
-                    </li>
-                </ul> -->
 
                 <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-cyan-800 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center">Hi, User <svg class=" w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
@@ -100,9 +87,7 @@
                     <li class="">
                         <a href="dashboard_user.php">Home</a>
                     </li>
-                    <!-- <li class="">
-                        <a href="about.php">About</a>
-                    </li> -->
+
                     <li class="">
                         <a href="find.php"> Layanan</a>
                     </li>
@@ -110,9 +95,7 @@
                         <a href="Informasi.php"> Information</a>
 
                     </li>
-                    <!-- <li class="px-2 bg-cyan-800 rounded-full text-white w-20 text-center">
-                        <button class="text-center h-7 text-sm"><a href="login.php">Sign in </a></button>
-                    </li> -->
+
                 </ul>
             </div>
         </div>

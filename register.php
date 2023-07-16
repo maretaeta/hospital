@@ -7,7 +7,7 @@ if (isset($_POST['register'])) {
     $password = $_POST['password'];
     $role = 'user';
 
-    // Query untuk menyimpan data pengguna baru ke database
+
     $query = "INSERT INTO users (email, name, password, role) VALUES ('$email', '$name', '$password', '$role')";
 
     if (mysqli_query($conn, $query)) {
@@ -17,9 +17,7 @@ if (isset($_POST['register'])) {
         $error_message = "Error: " . $query . "<br>" . mysqli_error($conn);
     }
 }
-?>
 
-<?php
 include('partials/header.php');
 ?>
 
@@ -28,7 +26,7 @@ include('partials/header.php');
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 px-8 md:px-16">
                 <h2 class="font-bold text-2xl text-[#002D74] text-center mb-10">Welcome to CareConnect</h2>
-                <form action="POST" class="flex flex-col gap-4">
+                <form method="POST" class="flex flex-col gap-4">
                     <input class="p-2 rounded-xl border" type="email" name="email" placeholder="Email" required />
                     <div class="relative">
                         <input class="p-2 rounded-xl border w-full" type="text" name="name" placeholder="Full Name" required />

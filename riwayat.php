@@ -5,6 +5,7 @@ include_once("db/koneksi.php");
 <?php include("partials/header.php"); ?>
 
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,3 +21,5 @@ include_once("db/koneksi.php");
     </ul>
 </body>
 </html>
+=======
+>>>>>>> f745b527dc85e68a7ea457715be1d121976fb388
