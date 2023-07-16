@@ -1,5 +1,24 @@
 <?php
 include_once("db/koneksi.php");
+
+if (isset($_POST['reservasi'])) {
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $usia = $_POST['usia'];
+    $layanan = $_POST['layanan'];
+    $tanggal = $_POST['tanggal'];
+    $waktu = $_POST['waktu'];
+
+    $query = "INSERT INTO reservasi (nama, alamat, usia, layanan, tanggal, waktu) VALUES ('$nama', '$alamat', '$usia', '$layanan', '$tanggal', '$waktu')";
+
+    if (mysqli_query($conn, $query)) {
+        header("Location: success.php");
+        exit;
+    } else {
+        $error_message = "Error: " . $query . "<br>" . mysqli_error($conn);
+    }
+}
+
 ?>
 
 <?php include("partials/header.php"); ?>
@@ -21,30 +40,30 @@ include_once("db/koneksi.php");
                 <p class="pb-5 lg:pb-7 text-center text-slate-400">
                     Cukup daftar online dari rumah untuk periksa hari ini, besok atau lusa.
                 </p>
-                <form class="mx-auto">
+                <form class="mx-auto" method="POST">
                     <div class="mb-3 lg:mb-7">
                         <label>
                             <p>Nama Lengkap</p>
                         </label>
-                        <input value="" type="text" placeholder="Enter Full Name" name="email" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800" />
+                        <input value="" type="text" placeholder="Enter Full Name" name="nama" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800" required />
                     </div>
                     <div class="mb-3 lg:mb-7">
                         <label>
                             <p>Alamat</p>
                         </label>
-                        <input value="" type="text" placeholder="Enter Address" name="email" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800" />
+                        <input value="" type="text" placeholder="Enter Address" name="alamat" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800" required />
                     </div>
                     <div class="mb-3 lg:mb-7">
                         <label>
                             <p>Usia</p>
                         </label>
-                        <input value="" type="text" placeholder="Enter " name="email" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800" />
+                        <input value="" type="text" placeholder="Enter " name="usia" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800" required />
                     </div>
                     <div class="mb-3 lg:mb-7">
                         <label>
                             <p>Pilih Layanan</p>
                         </label>
-                        <select name="usia" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800">
+                        <select name="layanan" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800 " required>
                             <option value="">Pilih Poli</option>
                             <option value="gigi">Poli Gigi</option>
                             <option value="mata">Poli Mata</option>
@@ -59,25 +78,25 @@ include_once("db/koneksi.php");
                         <label>
                             <p>Tanggal</p>
                         </label>
-                        <input type="text" id="datepicker" placeholder="Select Date" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10  text-lg bg-transparent border border-cyan-800">
+                        <input type="text" id="datepicker" placeholder="Select Date" name="tanggal" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10  text-lg bg-transparent border border-cyan-800" required>
                     </div>
 
                     <div class="mb-3 lg:mb-7">
                         <label>
                             <p>Waktu</p>
                         </label>
-                        <select name="usia" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800">
+                        <select name="waktu" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800" required>
                             <option value="">Pilih Jam</option>
-                            <option value="">08.00 - 11.00 am</option>
-                            <option value="">13.00 - 18.00 pm</option>
-                            <option value="">19.00 - 22.00 pm</option>
+                            <option value="08.00 - 11.00 am">08.00 - 11.00 am</option>
+                            <option value="13.00 - 18.00 pm">13.00 - 18.00 pm</option>
+                            <option value="19.00 - 22.00 pm">19.00 - 22.00 pm</option>
                         </select>
                     </div>
 
-                    <button type="submit" class="bg-cyan-800 text-white w-full rounded-full mx-auto py-2 ml-2 mt-3">
+                    <button type="submit" name="reservasi" class="bg-cyan-800 text-white w-full rounded-full mx-auto py-2 ml-2 mt-3">
                         Reservasi
                     </button>
-
+                </form>
             </div>
         </div>
     </div>

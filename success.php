@@ -3,12 +3,17 @@ include_once("db/koneksi.php");
 ?>
 
 <?php include("partials/header.php"); ?>
-<div>
-    <div class="min-h-screen flex items-center justify-center pt-10">
-        <img src="./img/succes.png" />
-        <div>
-            <button type="submit" name="register" class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Lihat Riwayat Reservasi</button>
-        </div>
+<div class="min-h-screen items-center bg-slate-100">
+    <div class=" flex justify-center pt-10">
+        <img src="./img/success.png" />
     </div>
+    <div class="text-center flex flex-col items-center justify-center pb-5">
+        <button type="submit" class="w-52 bg-cyan-900 p-2 rounded-xl text-white py-2 hover:scale-105 duration-300"><a href="dashboard_user.php">Kembali ke Beranda</a></button>
+
+    </div>
+    <div class="text-center flex flex-col items-center justify-center">
+        <button type="submit" class="w-52 bg-cyan-700 p-2 rounded-xl text-white py-2 hover:scale-105 duration-300"><a href="riwayat.php">Lihat Riwayat Reservasi </a></button>
+
+    </div>
+
 </div>
-<?php include("partials/footer.php"); ?>
