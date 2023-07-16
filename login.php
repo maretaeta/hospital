@@ -37,9 +37,9 @@ include('partials/header.php');
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 px-8 md:px-16">
                 <h2 class="font-bold text-2xl text-[#002D74] text-center mb-4">Login</h2>
-                <form method="POST" action="">
+                <form method="POST" action="" class="flex flex-col gap-4">
                     <?php if (isset($error_message)) : ?>
-                        <div class="error-message"><?php echo $error_message; ?></div>
+                        <div class="error-message text-red-600"><?php echo $error_message; ?></div>
                     <?php endif; ?>
                     <input class="p-2 rounded-xl border" type="email" name="email" placeholder="Email" required />
                     <div class="relative">
