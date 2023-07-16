@@ -47,12 +47,6 @@
 					<span class="text">Users</span>
 				</a>
 			</li>
-			<li>
-				<a href="poli_admin.php">
-					<i class='bx bxs-donate-heart'></i>
-					<span class="text">Poli</span>
-				</a>
-			</li>
 		</ul>
 		<ul class="side-menu">
 			<li>
