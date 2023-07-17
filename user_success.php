@@ -8,11 +8,11 @@ include_once("db/koneksi.php");
         <img src="./img/success.png" />
     </div>
     <div class="text-center flex flex-col items-center justify-center pb-5">
-        <button type="submit" class="w-52 bg-cyan-900 p-2 rounded-xl text-white py-2 hover:scale-105 duration-300"><a href="dashboard_user.php">Kembali ke Beranda</a></button>
+        <button type="submit" class="w-52 bg-cyan-900 p-2 rounded-xl text-white py-2 hover:scale-105 duration-300"><a href="user_dashboard.php">Kembali ke Beranda</a></button>
 
     </div>
     <div class="text-center flex flex-col items-center justify-center">
-        <button type="submit" class="w-52 bg-cyan-700 p-2 rounded-xl text-white py-2 hover:scale-105 duration-300"><a href="riwayat.php">Lihat Riwayat Reservasi </a></button>
+        <button type="submit" class="w-52 bg-cyan-700 p-2 rounded-xl text-white py-2 hover:scale-105 duration-300"><a href="user_history.php">Lihat Riwayat Reservasi </a></button>
 
     </div>
 

@@ -12,7 +12,7 @@ if (isset($_POST['reservasi'])) {
     $query = "INSERT INTO reservasi (nama, alamat, usia, layanan, tanggal, waktu) VALUES ('$nama', '$alamat', '$usia', '$layanan', '$tanggal', '$waktu')";
 
     if (mysqli_query($conn, $query)) {
-        header("Location: success.php");
+        header("Location: user_success.php");
         exit;
     } else {
         $error_message = "Error: " . $query . "<br>" . mysqli_error($conn);

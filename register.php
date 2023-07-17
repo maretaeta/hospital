@@ -4,11 +4,12 @@ include("db/koneksi.php");
 if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $name = $_POST['name'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
     $role = 'user';
 
 
-    $query = "INSERT INTO users (email, name, password, role) VALUES ('$email', '$name', '$password', '$role')";
+    $query = "INSERT INTO users (email, name, username, password, role) VALUES ('$email', '$name', '$username', '$password', '$role')";
 
     if (mysqli_query($conn, $query)) {
         header("Location: login.php");
@@ -27,14 +28,23 @@ include('partials/header.php');
             <div class="md:w-1/2 px-8 md:px-16">
                 <h2 class="font-bold text-2xl text-[#002D74] text-center mb-10">Welcome to CareConnect</h2>
                 <form method="POST" class="flex flex-col gap-4">
-                    <input class="p-2 rounded-xl border" type="email" name="email" placeholder="Email" required />
-                    <div class="relative">
-                        <input class="p-2 rounded-xl border w-full" type="text" name="name" placeholder="Full Name" required />
+                    <div>
+                        <label>Email</label>
+                        <input class="p-2 rounded-md border border-cyan-800" type="email" name="email" placeholder="Enter Email" required />
                     </div>
                     <div class="relative">
-                        <input class="p-2 rounded-xl border w-full" type="password" name="password" placeholder="Password" required />
+                        <label>Full Name </label>
+                        <input class="p-2 rounded-md border border-cyan-800" type="text" name="name" placeholder="Enter Full Name" required />
                     </div>
-                    <button type="submit" name="register" class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Daftar</button>
+                    <div class="relative">
+                        <label>Username </label>
+                        <input class="p-2 rounded-md border border-cyan-800" type="text" name="username" placeholder="Enter Username" required />
+                    </div>
+                    <div class="relative mb-3">
+                        <label>Password </label>
+                        <input class="p-2 rounded-md border border-cyan-800" type="password" name="password" placeholder="Enter Password" required />
+                    </div>
+                    <button type="submit" name="register" class="bg-[#002D74] rounded-md text-white p-2 hover:scale-105 duration-300">Daftar</button>
                 </form>
                 <div class="mt-3 text-xs flex gap-1 justify-center items-center text-[#002D74]">
                     <p>have an account?</p>

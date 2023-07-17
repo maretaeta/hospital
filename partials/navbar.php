@@ -35,7 +35,7 @@
                     <li class="hover:text-cyan-600 relative text-cyan-800 cursor-pointer transition-all 
                  before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-1 before:rounded-full before:opacity-0 before:transition-all
                  before:duration-500 before:bg-cyan-600 hover:before:w-full hover:before:opacity-100">
-                        <a href="dashboard_user.php">
+                        <a href="user_dashboard.php">
                             Home
                         </a>
                     </li>
@@ -44,24 +44,24 @@
                     <li class="hover:text-cyan-600 text-cyan-800 relative cursor-pointer transition-all 
                  before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-1 before:rounded-full before:opacity-0 before:transition-all
                  before:duration-500 before:bg-cyan-600 hover:before:w-full hover:before:opacity-100">
-                        <a href="find.php">
+                        <a href="user_layanan.php">
                             Layanan
                         </a>
                     </li>
                     <li class="hover:text-cyan-600 text-cyan-800 relative cursor-pointer transition-all 
                  before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-1 before:rounded-full before:opacity-0 before:transition-all
                  before:duration-500 before:bg-cyan-600 hover:before:w-full hover:before:opacity-100">
-                        <a href="Informasi.php">
+                        <a href="user_informasi.php">
                             Information
                         </a>
                     </li>
 
                 </ul>
             </div>
+
             <div class="text-gray-900 md:block hidden font-medium rounded-bl-full pt-3 items-center">
-
-
-                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-cyan-800 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center">Hi, User <svg class=" w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-cyan-800 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center">Hi, User
+                    <svg class=" w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
@@ -69,30 +69,29 @@
                 <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                         <li>
-                            <a href="riwayat.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">History</a>
+                            <a href="user_history.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">History</a>
                         </li>
                         <li>
                             <a href="logout.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
                         </li>
-
                     </ul>
                 </div>
-
             </div>
+
             <div class="text-gray-900 md:hidden text-3xl z-[999] m-5 mt-7 flex items-center" id="toggleButton">
                 <ion-icon name="menu"></ion-icon>
             </div>
             <div class="text-gray-900 md:hidden absolute w-1/2 h-screen px-7 py-2 font-medium bg-white top-0 right-0 mobile-menu-hidden" id="mobileMenu">
                 <ul class="flex flex-col justify-center items-center h-full gap-10 text-lg">
                     <li class="">
-                        <a href="dashboard_user.php">Home</a>
+                        <a href="user_dashboard.php">Home</a>
                     </li>
 
                     <li class="">
-                        <a href="find.php"> Layanan</a>
+                        <a href="user_layanan.php"> Layanan</a>
                     </li>
                     <li class="">
-                        <a href="Informasi.php"> Information</a>
+                        <a href="user_informasi.php"> Information</a>
 
                     </li>
 

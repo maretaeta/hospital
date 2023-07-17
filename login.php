@@ -1,12 +1,12 @@
 <?php
+session_start();
 include("db/koneksi.php");
 
 if (isset($_POST['login'])) {
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Query untuk memeriksa kecocokan email dan password dalam database
-    $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) == 1) {
@@ -15,11 +15,11 @@ if (isset($_POST['login'])) {
             header("Location: dashboard_admin.php");
             exit;
         } else {
-            header("Location: dashboard_user.php");
+            header("Location: user_dashboard.php");
             exit;
         }
     } else {
-        $error_message = "Email atau password salah.";
+        $error_message = "Username atau password salah.";
     }
 }
 ?>
@@ -37,22 +37,30 @@ include('partials/header.php');
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 px-8 md:px-16">
                 <h2 class="font-bold text-2xl text-[#002D74] text-center mb-4">Login</h2>
-                <form method="POST" action="" class="flex flex-col gap-4">
+                <form method="POST" action="" class="flex flex-col gap-4 mx-auto">
                     <?php if (isset($error_message)) : ?>
                         <div class="error-message text-red-600"><?php echo $error_message; ?></div>
                     <?php endif; ?>
-                    <input class="p-2 rounded-xl border" type="email" name="email" placeholder="Email" required />
-                    <div class="relative">
-                        <input class="p-2 rounded-xl border w-full" type="password" name="password" placeholder="Password" required />
+                    <div>
+                        <label>
+                            <p>Username </p>
+                        </label>
+                        <input class=" p-2 rounded-md border border-cyan-800" type="text" name="username" placeholder="Enter Username" required />
                     </div>
-                    <button type="submit" name="login" class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Login</button>
+                    <div class="relative mb-3 ">
+                        <label>
+                            <p>Password</p>
+                        </label>
+                        <input class="p-2 rounded-md border border-cyan-800" type="password" name="password" placeholder="Password" required />
+                    </div>
+                    <button type="submit" name="login" class="bg-[#002D74] rounded-md text-white p-2 hover:scale-105 duration-300 ">Login</button>
                 </form>
                 <div class="mt-3 text-xs flex gap-1 justify-center items-center text-[#002D74]">
                     <p>Don't have an account?</p>
                     <button class="py-2 underline hover:scale-110 duration-300"> <a href="register.php">Register </a></button>
                 </div>
             </div>
-            <div class="md:w-1/2 px-8 md:px-16 flex justify-center">
+            <div class=" px-8 md:px-16 flex justify-center">
                 <img class="rounded-2xl md:mt-0 mt-8" src="./img/image.png" />
             </div>
         </div>

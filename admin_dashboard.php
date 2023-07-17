@@ -24,25 +24,25 @@
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="dashboard_admin.php" class="brand">
+		<a href="admin_dashboard.php" class="brand">
 			<img src="./img/logo.png" class="w-12" />
 			<span class="text">Admin Dashboard</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="dashboard_admin.php">
+				<a href="admin_dashboard.php">
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
 			<li>
-				<a href="reservation_admin.php">
+				<a href="admin_listReservasi.php">
 					<i class='bx bxs-message'></i>
 					<span class="text">Reservation</span>
 				</a>
 			</li>
 			<li>
-				<a href="users_admin.php">
+				<a href="admin_listUser.php">
 					<i class='bx bxs-user'></i>
 					<span class="text">Users</span>
 				</a>
@@ -118,7 +118,7 @@
 			</ul>
 
 
-			
+
 		</main>
 		<!-- MAIN -->
 	</section>

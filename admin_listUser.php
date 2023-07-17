@@ -30,19 +30,19 @@
 		</a>
 		<ul class="side-menu top">
 			<li>
-				<a href="dashboard_admin.php">
+				<a href="admin_dashboard.php">
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
 			<li>
-				<a href="reservation_admin.php">
+				<a href="admin_listReservasi.php">
 					<i class='bx bxs-message'></i>
 					<span class="text">Reservation</span>
 				</a>
 			</li>
 			<li class="active">
-				<a href="users_admin.php">
+				<a href="admin_listUser.php">
 					<i class='bx bxs-user'></i>
 					<span class="text">Users</span>
 				</a>
@@ -93,18 +93,18 @@
 				</div>
 			</div>
 			<div>
-    <h1>Users Database</h1>
-	<br>
+				<h1>Users Database</h1>
+				<br>
 
-    <?php
-    // Mengambil data dari database
-    $query = "SELECT * FROM users"; // Ganti dengan nama tabel Anda
-    $result = mysqli_query($conn, $query);
+				<?php
+				// Mengambil data dari database
+				$query = "SELECT * FROM users"; // Ganti dengan nama tabel Anda
+				$result = mysqli_query($conn, $query);
 
-    // Menampilkan data
-    if (mysqli_num_rows($result) > 0) {
-        echo "<table style='border-collapse: collapse; cellspacing: 10px;'>";
-        echo "<tr>
+				// Menampilkan data
+				if (mysqli_num_rows($result) > 0) {
+					echo "<table style='border-collapse: collapse; cellspacing: 10px;'>";
+					echo "<tr>
                 <th style='border: 1px solid black;'>User ID</th>
                 <th style='border: 1px solid black;'>Email</th>
                 <th style='border: 1px solid black;'>Name</th>
@@ -113,25 +113,25 @@
                 <th style='border: 1px solid black;'>Role</th>
               </tr>";
 
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td style='border: 1px solid black; text-align: center'>" . $row['users_id'] . "</td>";
-            echo "<td style='border: 1px solid black;'>" . $row['email'] . "</td>";
-            echo "<td style='border: 1px solid black;'>" . $row['name'] . "</td>";
-            echo "<td style='border: 1px solid black;'>" . $row['username'] . "</td>";
-            echo "<td style='border: 1px solid black;'>" . $row['password'] . "</td>";
-            echo "<td style='border: 1px solid black;'>" . $row['role'] . "</td>";
-            echo "</tr>";
-        }
+					while ($row = mysqli_fetch_assoc($result)) {
+						echo "<tr>";
+						echo "<td style='border: 1px solid black; text-align: center'>" . $row['users_id'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['email'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['name'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['username'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['password'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['role'] . "</td>";
+						echo "</tr>";
+					}
 
-        echo "</table>";
-    } else {
-        echo "Tidak ada data yang ditemukan.";
-    }
+					echo "</table>";
+				} else {
+					echo "Tidak ada data yang ditemukan.";
+				}
 
-    // Menutup koneksi database
-    mysqli_close($conn);
-?>
+				// Menutup koneksi database
+				mysqli_close($conn);
+				?>
 
 			</div>
 		</main>

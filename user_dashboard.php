@@ -14,15 +14,14 @@ include_once("db/koneksi.php");
         </div>
         <div class="flex-1">
             <div class="md:text-left text-center">
-                <h1 class="sm:text-5xl text-2xl md:leading-normal leading-10 text-slate-600 font-bold">
-                    Find The <span class="text-cyan-600 "> Best Doctor </span> Near You
+                <h1 class="sm:text-5xl text-2xl md:leading-normal leading-10 text-slate-600 font-bold pb-3">
+                    Effortless
+
+                    <span class="text-cyan-600 ">Hospital Reservations</span> at Your Fingertips
                 </h1>
-                <p class="text-sm text-slate-400 pb-4 ">We are Ilo! Dokter, we help you find general specialist and the
-                    closest
-                    doctor to handle your healt
-                    problems </p>
+                <p class="text-sm text-slate-400 pb-4 ">Find and book general specialists and nearby doctors easily. Simplify your healthcare journey with just a few taps. Download now for seamless access to quality healthcare. </p>
                 <button class="h-12 text-sm px-2 bg-cyan-800 rounded-xl text-white w-32 text-center hover:scale-110">
-                    <a href="reservasi.php"> Reservation</a>
+                    <a href="user_reservasi.php"> Reservation</a>
                 </button>
             </div>
         </div>
@@ -71,7 +70,7 @@ include_once("db/koneksi.php");
             <div class="pt-12 text-center">
                 <p class="font-bold text-2xl">Frequently Asked Question</p>
                 <p class="md:text-center md:pt-2 pb-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                    Here are some commonly asked questions about our app that simplifies hospital reservations
                 </p>
             </div>
 
@@ -80,7 +79,7 @@ include_once("db/koneksi.php");
                     <div class="relative w[-400] border shadow-[6px_6px_10px_-1px_rgba(0, 0, p, 0.15), -6px,_-6px_10px_-1px_rgba(255, 255,0.8)] rounded m-[15px]">
                         <input type="checkbox" id="input1" class="absolute peer opacity-0" />
                         <label for="input1" class="text-sm mx-7 h-14 flex items-center">
-                            Apa saja syarat yang dibutuhkan?
+                            What is CareConnect?
                         </label>
                         <div class="absolute top-4 right-4 transform peer-checked:rotate-180 transition-transform duration-200">
                             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -89,10 +88,7 @@ include_once("db/koneksi.php");
                         </div>
                         <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
                             <p class="p-4 pl-7 text-sm">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                                nihil doloribus voluptate ea molestiae! Non quod, similique
-                                omnis maiores blanditiis voluptatem pariatur eaque aut quia
-                                praesentium accusantium, iusto, asperiores at.
+                                CareConnect is a mobile application that allows you to make hospital reservations with ease. It helps you find general specialists and locate the nearest doctors to handle your health problems.
                             </p>
                         </div>
                     </div>
@@ -100,7 +96,7 @@ include_once("db/koneksi.php");
                     <div class="relative w[-400] border shadow-[6px_6px_10px_-1px_rgba(0, 0, p, 0.15), -6px,_-6px_10px_-1px_rgba(255, 255,0.8)] rounded m-[15px]">
                         <input type="checkbox" id="input2" class="absolute peer opacity-0" />
                         <label for="input2" class="text-sm mx-7 h-14 flex items-center">
-                            Berapa hari minimal sewa mobil lepas kunci?
+                            How does CareConnect work?
                         </label>
                         <div class="absolute top-4 right-4 transform peer-checked:rotate-180 transition-transform duration-200">
                             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -109,10 +105,7 @@ include_once("db/koneksi.php");
                         </div>
                         <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
                             <p class="p-4 pl-7 text-sm">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                                nihil doloribus voluptate ea molestiae! Non quod, similique
-                                omnis maiores blanditiis voluptatem pariatur eaque aut quia
-                                praesentium accusantium, iusto, asperiores at.
+                                CareConnect provides a user-friendly interface where you can search for doctors based on their specialty and location. You can browse through verified profiles, read patient reviews, and book appointments directly through the app.
                             </p>
                         </div>
                     </div>
@@ -120,7 +113,7 @@ include_once("db/koneksi.php");
                     <div class="relative w[-400] border shadow-[6px_6px_10px_-1px_rgba(0, 0, p, 0.15), -6px,_-6px_10px_-1px_rgba(255, 255,0.8)] rounded m-[15px]">
                         <input type="checkbox" id="input3" class="absolute peer opacity-0" />
                         <label for="input3" class="text-sm mx-7 h-14 flex items-center">
-                            Berapa hari sebelumnya sebaiknya booking sewa mobil?
+                            Can I book appointments in real-time?
                         </label>
                         <div class="absolute top-4 right-4 transform peer-checked:rotate-180 transition-transform duration-200">
                             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -129,21 +122,33 @@ include_once("db/koneksi.php");
                         </div>
                         <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
                             <p class="p-4 pl-7 text-sm">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                                nihil doloribus voluptate ea molestiae! Non quod, similique
-                                omnis maiores blanditiis voluptatem pariatur eaque aut quia
-                                praesentium accusantium, iusto, asperiores at.
+                                Yes, CareConnect provides real-time availability information, allowing you to book appointments based on the doctors' schedules. You can select a suitable time slot that fits your schedule conveniently.
                             </p>
                         </div>
                     </div>
+
+                    <div class="relative w[-400] border shadow-[6px_6px_10px_-1px_rgba(0, 0, p, 0.15), -6px,_-6px_10px_-1px_rgba(255, 255,0.8)] rounded m-[15px]">
+                        <input type="checkbox" id="input3" class="absolute peer opacity-0" />
+                        <label for="input3" class="text-sm mx-7 h-14 flex items-center">
+                            Is CareConnect free to use?
+                        </label>
+                        <div class="absolute top-4 right-4 transform peer-checked:rotate-180 transition-transform duration-200">
+                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                        <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
+                            <p class="p-4 pl-7 text-sm">
+                                Yes, CareConnect is free to download and use. However, the fees for medical consultations or services provided by the doctors are determined by the healthcare providers themselves.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-</div>
-</div>
-</div>
-</div>
 
 <?php include("partials/footer.php"); ?>
