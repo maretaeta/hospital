@@ -65,12 +65,12 @@ if (isset($_POST['reservasi'])) {
                         </label>
                         <select name="layanan" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800 " required>
                             <option value="">Pilih Poli</option>
-                            <option value="gigi">Poli Gigi</option>
-                            <option value="mata">Poli Mata</option>
-                            <option value="anak">Poli Anak</option>
-                            <option value="kandungan">Poli Kandungan & Kebidanan</option>
-                            <option value="umum">Dokter Umum</option>
-                            <option value="fisioterapi">Fisioterapi</option>
+                            <option value="Poli Gigi">Poli Gigi</option>
+                            <option value="Poli Mata">Poli Mata</option>
+                            <option value="Poli Anak">Poli Anak</option>
+                            <option value="Poli Kandungan & Kebidanan">Poli Kandungan & Kebidanan</option>
+                            <option value="Dokter Umum">Dokter Umum</option>
+                            <option value="Fisioterapi">Fisioterapi</option>
                         </select>
                     </div>
 
@@ -104,6 +104,6 @@ if (isset($_POST['reservasi'])) {
 
 <script>
     flatpickr("#datepicker", {
-        dateFormat: "d/m/Y",
+        dateFormat: "Y/m/d",
     });
 </script>

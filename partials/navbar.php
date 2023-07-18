@@ -27,7 +27,7 @@
             <div class="flex items-center justify-center">
                 <img src="./img/logo.png" class="h-20 pt-5" />
                 <h4 class="md:text-2xl pt-3 text-xl font-bold text-cyan-800">
-                    CareConnect
+                    <a href="user_dashboard.php"> CareConnect</a>
                 </h4>
             </div>
             <div class="lg:text-lg text-white pt-3 items-center">
@@ -92,6 +92,10 @@
                     </li>
                     <li class="">
                         <a href="user_informasi.php"> Information</a>
+
+                    </li>
+                    <li class="">
+                        <a href="user_history.php"> History</a>
 
                     </li>
 
