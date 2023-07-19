@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2023 at 12:08 PM
+-- Generation Time: Jul 19, 2023 at 07:40 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -50,15 +50,63 @@ INSERT INTO `poli` (`id`, `nama`, `deskripsi`, `gambar`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reservasi`
+--
+
+CREATE TABLE `reservasi` (
+  `reservasi_id` int(11) NOT NULL,
+  `nama` varchar(225) DEFAULT NULL,
+  `alamat` varchar(225) DEFAULT NULL,
+  `usia` int(11) DEFAULT NULL,
+  `layanan` varchar(225) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `waktu` varchar(225) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reservasi`
+--
+
+INSERT INTO `reservasi` (`reservasi_id`, `nama`, `alamat`, `usia`, `layanan`, `tanggal`, `waktu`) VALUES
+(5, 'eta', 'Jl. A. Yani, Mendungan, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57169', 19, 'Poli Mata', '2023-07-31', '19.00 - 22.00 pm'),
+(6, 'jeki', 'Jl. A. Yani, Mendungan, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57169', 22, 'Dokter Umum', '2023-07-26', '08.00 - 11.00 am'),
+(7, 'zar', 'Jl. A. Yani, Mendungan, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57169', 21, 'Fisioterapi', '2023-07-31', '19.00 - 22.00 pm');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `users_id` int(11) NOT NULL,
+  `email` varchar(225) NOT NULL,
   `name` varchar(225) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` enum('admin','user') NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`users_id`, `email`, `name`, `username`, `password`, `role`) VALUES
+(1, 'maretanur197@gmail.com', 'MARETA NUR ISNAINI', '', 'Maretaeta25zzz', 'user'),
+(2, 'admin@gmail.com', 'admin', 'admin', 'admin', 'admin'),
+(3, 'reza@email.com', 'reza', '', 'reza', 'user'),
+(4, 'gaza123@gmail.com', 'gazza', 'gaza', 'gaza', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_has_reservation`
+--
+
+CREATE TABLE `users_has_reservation` (
+  `users_id` int(11) DEFAULT NULL,
+  `reservasi_id` int(11) DEFAULT NULL,
+  `booking_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -72,10 +120,23 @@ ALTER TABLE `poli`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `reservasi`
+--
+ALTER TABLE `reservasi`
+  ADD PRIMARY KEY (`reservasi_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`users_id`);
+
+--
+-- Indexes for table `users_has_reservation`
+--
+ALTER TABLE `users_has_reservation`
+  ADD KEY `users_id` (`users_id`),
+  ADD KEY `reservasi_id` (`reservasi_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -88,10 +149,27 @@ ALTER TABLE `poli`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `reservasi`
+--
+ALTER TABLE `reservasi`
+  MODIFY `reservasi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `users_has_reservation`
+--
+ALTER TABLE `users_has_reservation`
+  ADD CONSTRAINT `users_has_reservation_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`users_id`),
+  ADD CONSTRAINT `users_has_reservation_ibfk_2` FOREIGN KEY (`reservasi_id`) REFERENCES `reservasi` (`reservasi_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
