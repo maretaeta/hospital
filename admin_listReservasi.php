@@ -96,94 +96,50 @@
 					<span class="text">Download PDF</span>
 				</a>
 			</div>
-			<div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3>Recent Orders</h3>
-						<i class='bx bx-search'></i>
-						<i class='bx bx-filter'></i>
-					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>User</th>
-								<th>Date Order</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus'></i>
-						<i class='bx bx-filter'></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-					</ul>
-				</div>
+			
+			<div>
+				<h1>Reservations Database</h1>
+				<br>
+
+				<?php
+				// Mengambil data dari database
+				$query = "SELECT * FROM reservasi"; // Ganti dengan nama tabel Anda
+				$result = mysqli_query($conn, $query);
+
+				// Menampilkan data
+				if (mysqli_num_rows($result) > 0) {
+					echo "<table style='border-collapse: collapse; cellspacing: 10px;'>";
+					echo "<tr>
+                <th style='border: 1px solid black;'>Reservasi ID</th>
+                <th style='border: 1px solid black;'>Nama</th>
+                <th style='border: 1px solid black;'>Alamat</th>
+                <th style='border: 1px solid black;'>Usia</th>
+                <th style='border: 1px solid black;'>Layanan</th>
+                <th style='border: 1px solid black;'>Tanggal</th>
+                <th style='border: 1px solid black;'>Waktu</th>
+              </tr>";
+
+					while ($row = mysqli_fetch_assoc($result)) {
+						echo "<tr>";
+						echo "<td style='border: 1px solid black; text-align: center'>" . $row['reservasi_id'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['nama'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['alamat'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['usia'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['layanan'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['tanggal'] . "</td>";
+						echo "<td style='border: 1px solid black;'>" . $row['waktu'] . "</td>";
+						echo "</tr>";
+					}
+
+					echo "</table>";
+				} else {
+					echo "Tidak ada data yang ditemukan.";
+				}
+
+				// Menutup koneksi database
+				mysqli_close($conn);
+				?>
+
 			</div>
 		</main>
 		<!-- MAIN -->

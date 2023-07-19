@@ -110,7 +110,6 @@
                 <th style='border: 1px solid black;'>Name</th>
                 <th style='border: 1px solid black;'>Username</th>
                 <th style='border: 1px solid black;'>Password</th>
-                <th style='border: 1px solid black;'>Role</th>
               </tr>";
 
 					while ($row = mysqli_fetch_assoc($result)) {
@@ -120,7 +119,6 @@
 						echo "<td style='border: 1px solid black;'>" . $row['name'] . "</td>";
 						echo "<td style='border: 1px solid black;'>" . $row['username'] . "</td>";
 						echo "<td style='border: 1px solid black;'>" . $row['password'] . "</td>";
-						echo "<td style='border: 1px solid black;'>" . $row['role'] . "</td>";
 						echo "</tr>";
 					}
 
