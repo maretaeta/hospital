@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 	<link rel="stylesheet" href="style.css">
 
 	<title>Admin Dashboard</title>
@@ -141,8 +142,8 @@
                                 <td class='border border-white px-4 py-2'>" . $row['tanggal'] . "</td>
                                 <td class='border border-white px-4 py-2'>" . $row['waktu'] . "</td>
 									<td class='border border-white px-4 py-2'>
-    								<a href='admin_deleteReservation.php?reservasi_id=" . $row['reservasi_id'] . "' class='btn-delete'>Delete</a>
-    								<button onclick='openUpdateModal(" . $row['reservasi_id'] . ", \"" . $row['nama'] . "\", \"" . $row['alamat'] . "\", " . $row['usia'] . ", \"" . $row['layanan'] . "\", \"" . $row['tanggal'] . "\", \"" . $row['waktu'] . "\")' class='btn-update-modal'>Update</button>
+									<button onclick='openUpdateModal(" . $row['reservasi_id'] . ", \"" . $row['nama'] . "\", \"" . $row['alamat'] . "\", " . $row['usia'] . ", \"" . $row['layanan'] . "\", \"" . $row['tanggal'] . "\", \"" . $row['waktu'] . "\")' class='btn-update-modal'><i class='bx bxs-wrench'></i></button>|
+    								<a href='admin_deleteReservation.php?reservasi_id=" . $row['reservasi_id'] . "' class='btn-delete'><i class='bx bxs-trash'></i></a>
 								</td>
                             </tr>";
 							}
