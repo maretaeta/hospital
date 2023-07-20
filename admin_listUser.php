@@ -5,9 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
 	<title>Admin Dashboard</title>
@@ -22,7 +20,6 @@
 	include_once("db/koneksi.php"); ?>
 	<?php include("partials/header.php"); ?>
 
-	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="admin_dashboard.php" class="brand pt-5">
 			<img src="./img/logo.png" class="w-20 pt-2" />
@@ -57,13 +54,9 @@
 			</li>
 		</ul>
 	</section>
-	<!-- SIDEBAR -->
 
 
-
-	<!-- CONTENT -->
 	<section id="content">
-		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu'></i>
 			<a href="#" class="text-cyan-800 font-semibold text-xl">Hi, Admin</a>
@@ -83,64 +76,53 @@
 				<img src="img/people.png">
 			</a> -->
 		</nav>
-		<!-- NAVBAR -->
 
-		<!-- MAIN -->
-		<!-- Assuming you have included Tailwind CSS in your project -->
 		<main class="p-4">
 			<div class="head-title mb-4">
 				<div class="left">
-					<div class="text-2xl font-bold"> Reservation</div>
+					<div class="text-3xl font-bold">Users</div>
 				</div>
 			</div>
 			<p class="text-xl text-cyan-600 font-medium mt-8 pb-5">Data Users</p>
-			<div>
+			<div class="overflow-x-auto">
+				<table class="w-full table-auto border-collapse">
+					<thead>
+						<tr class="bg-cyan-800 text-white">
+							<th class="border border-white px-4 py-2">User ID</th>
+							<th class="border border-white px-4 py-2">Email</th>
+							<th class="border border-white px-4 py-2">Name</th>
+							<th class="border border-white px-4 py-2">Username</th>
+							<th class="border border-white px-4 py-2">Password</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						$query = "SELECT * FROM users";
+						$result = mysqli_query($conn, $query);
 
-				<?php
-				// Mengambil data dari database
-				$query = "SELECT * FROM users"; // Ganti dengan nama tabel Anda
-				$result = mysqli_query($conn, $query);
+						if (mysqli_num_rows($result) > 0) {
+							while ($row = mysqli_fetch_assoc($result)) {
+								echo "<tr class='bg-gray-100'>";
+								echo "<td class='border border-white px-4 py-2 text-center'>" . $row['users_id'] . "</td>";
+								echo "<td class='border border-white px-4 py-2'>" . $row['email'] . "</td>";
+								echo "<td class='border border-white px-4 py-2'>" . $row['name'] . "</td>";
+								echo "<td class='border border-white px-4 py-2'>" . $row['username'] . "</td>";
+								echo "<td class='border border-white px-4 py-2'>" . $row['password'] . "</td>";
+								echo "</tr>";
+							}
+						} else {
+							echo "<tr><td colspan='5' class='border border-white px-4 py-2 text-center'>Tidak ada data yang ditemukan.</td></tr>";
+						}
 
-				// Menampilkan data
-				if (mysqli_num_rows($result) > 0) {
-					echo '<div class="overflow-x-auto">
-              <table class="w-full table-auto">
-                <thead>
-                  <tr>
-                    <th class="border px-4 py-2">User ID</th>
-                    <th class="border px-4 py-2">Email</th>
-                    <th class="border px-4 py-2">Name</th>
-                    <th class="border px-4 py-2">Username</th>
-                    <th class="border px-4 py-2">Password</th>
-                  </tr>
-                </thead>
-                <tbody>';
-
-					while ($row = mysqli_fetch_assoc($result)) {
-						echo "<tr>";
-						echo "<td class='border px-4 py-2 text-center'>" . $row['users_id'] . "</td>";
-						echo "<td class='border px-4 py-2'>" . $row['email'] . "</td>";
-						echo "<td class='border px-4 py-2'>" . $row['name'] . "</td>";
-						echo "<td class='border px-4 py-2'>" . $row['username'] . "</td>";
-						echo "<td class='border px-4 py-2'>" . $row['password'] . "</td>";
-						echo "</tr>";
-					}
-
-					echo '</tbody></table></div>';
-				} else {
-					echo "Tidak ada data yang ditemukan.";
-				}
-
-				// Menutup koneksi database
-				mysqli_close($conn);
-				?>
+						mysqli_close($conn);
+						?>
+					</tbody>
+				</table>
 			</div>
 		</main>
 
-		<!-- MAIN -->
-	</section>
-	<!-- CONTENT -->
 
+	</section>
 
 	<script src="script.js"></script>
 </body>

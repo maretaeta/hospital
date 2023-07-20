@@ -5,9 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
 	<title>Admin Dashboard</title>
@@ -15,9 +13,7 @@
 
 <body>
 	<?php
-
 	session_start();
-
 
 	include_once("db/koneksi.php"); ?>
 	<?php include("partials/header.php"); ?>
@@ -57,11 +53,7 @@
 			</li>
 		</ul>
 	</section>
-	<!-- SIDEBAR -->
 
-
-
-	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
 		<nav>
@@ -83,74 +75,63 @@
 				<img src="img/people.png">
 			</a> -->
 		</nav>
-		<!-- NAVBAR -->
 
 		<!-- MAIN -->
 		<main class="container mx-auto px-4 py-8">
-			<div class="head-title flex items-center justify-between">
+			<div class="head-title flex items-center justify-between mb-8">
 				<div class="left">
-					<div class="text-2xl font-bold"> Reservation</div>
+					<div class="text-3xl font-bold">Reservation</div>
 				</div>
 				<a href="#" class="btn-download flex items-center px-4 py-2 bg-blue-500 text-white rounded-md">
 					<i class='bx bxs-cloud-download mr-2'></i>
 					<span class="text">Download PDF</span>
 				</a>
 			</div>
-			<p class="text-xl text-cyan-600 font-medium mt-8 pb-5">Data Reservations</p>
-			<div>
 
+			<p class="text-xl text-cyan-600 font-medium pb-5">Data Reservations</p>
+			<div class="overflow-x-auto">
+				<table class="w-full border-collapse table-auto">
+					<thead>
+						<tr class="bg-cyan-800 text-white">
+							<th class="border border-white px-4 py-2">Reservasi ID</th>
+							<th class="border border-white px-4 py-2">Nama</th>
+							<th class="border border-white px-4 py-2">Alamat</th>
+							<th class="border border-white px-4 py-2">Usia</th>
+							<th class="border border-white px-4 py-2">Layanan</th>
+							<th class="border border-white px-4 py-2">Tanggal</th>
+							<th class="border border-white px-4 py-2">Waktu</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
 
-				<?php
-				// Mengambil data dari database
-				$query = "SELECT * FROM reservasi";
-				$result = mysqli_query($conn, $query);
+						$query = "SELECT * FROM reservasi";
+						$result = mysqli_query($conn, $query);
 
-				// Menampilkan data
-				if (mysqli_num_rows($result) > 0) {
-					echo "<div class='overflow-x-auto'>
-        <table class='table-auto w-full border-collapse'>
-          <thead>
-            <tr class='bg-gray-200'>
-              <th class='border border-black px-4 py-2'>Reservasi ID</th>
-              <th class='border border-black px-4 py-2'>Nama</th>
-              <th class='border border-black px-4 py-2'>Alamat</th>
-              <th class='border border-black px-4 py-2'>Usia</th>
-              <th class='border border-black px-4 py-2'>Layanan</th>
-              <th class='border border-black px-4 py-2'>Tanggal</th>
-              <th class='border border-black px-4 py-2'>Waktu</th>
-            </tr>
-          </thead>
-          <tbody>";
+						if (mysqli_num_rows($result) > 0) {
+							while ($row = mysqli_fetch_assoc($result)) {
+								echo "<tr class='bg-gray-100'>
+                                <td class='border border-white px-4 py-2 text-center'>" . $row['reservasi_id'] . "</td>
+                                <td class='border border-white px-4 py-2'>" . $row['nama'] . "</td>
+                                <td class='border border-white px-4 py-2'>" . $row['alamat'] . "</td>
+                                <td class='border border-white px-4 py-2'>" . $row['usia'] . "</td>
+                                <td class='border border-white px-4 py-2'>" . $row['layanan'] . "</td>
+                                <td class='border border-white px-4 py-2'>" . $row['tanggal'] . "</td>
+                                <td class='border border-white px-4 py-2'>" . $row['waktu'] . "</td>
+                            </tr>";
+							}
+						} else {
+							echo "<tr><td colspan='7' class='border border-white px-4 py-2 text-center'>Tidak ada data yang ditemukan.</td></tr>";
+						}
 
-					while ($row = mysqli_fetch_assoc($result)) {
-						echo "<tr class='bg-gray-100'>";
-						echo "<td class='border border-black px-4 py-2 text-center'>" . $row['reservasi_id'] . "</td>";
-						echo "<td class='border border-black px-4 py-2'>" . $row['nama'] . "</td>";
-						echo "<td class='border border-black px-4 py-2'>" . $row['alamat'] . "</td>";
-						echo "<td class='border border-black px-4 py-2'>" . $row['usia'] . "</td>";
-						echo "<td class='border border-black px-4 py-2'>" . $row['layanan'] . "</td>";
-						echo "<td class='border border-black px-4 py-2'>" . $row['tanggal'] . "</td>";
-						echo "<td class='border border-black px-4 py-2'>" . $row['waktu'] . "</td>";
-						echo "</tr>";
-					}
-
-					echo "</tbody></table></div>";
-				} else {
-					echo "Tidak ada data yang ditemukan.";
-				}
-
-				// Menutup koneksi database
-				mysqli_close($conn);
-				?>
-
+						mysqli_close($conn);
+						?>
+					</tbody>
+				</table>
 			</div>
 		</main>
 
-
-		<!-- MAIN -->
 	</section>
-	<!-- CONTENT -->
-
 
 	<script src="script.js"></script>
 </body>

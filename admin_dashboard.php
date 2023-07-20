@@ -94,7 +94,7 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<div class="text-3xl font-bold"> Dashboard</div>
 				</div>
 			</div>
 
@@ -103,21 +103,21 @@
 					<i class='bx bxs-calendar-check'></i>
 					<span class="text">
 						<h3>1020</h3>
-						<p>New Order</p>
+						<p>Total Reservation</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-group'></i>
 					<span class="text">
 						<h3>2834</h3>
-						<p>Visitors</p>
+						<p>Total Users</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle'></i>
 					<span class="text">
 						<h3>$2543</h3>
-						<p>Total Sales</p>
+						<p>Total All</p>
 					</span>
 				</li>
 			</ul>
@@ -125,10 +125,7 @@
 
 
 		</main>
-		<!-- MAIN -->
 	</section>
-	<!-- CONTENT -->
-
 
 	<script src="script.js"></script>
 </body>
