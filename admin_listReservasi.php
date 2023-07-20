@@ -96,10 +96,9 @@
 					<span class="text">Download PDF</span>
 				</a>
 			</div>
-
+			<p class="text-xl text-cyan-600 font-medium mt-8 pb-5">Data Reservations</p>
 			<div>
-				<p class="text-xl text-cyan-600 font-medium mt-8">Data Reservations</p>
-				<br>
+
 
 				<?php
 				// Mengambil data dari database

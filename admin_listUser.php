@@ -66,7 +66,7 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu'></i>
-			<a href="#" class="nav-link">Categories</a>
+			<a href="#" class="text-cyan-800 font-semibold text-xl">Hi, Admin</a>
 			<form action="#">
 				<div class="">
 					<!-- <input type="search" placeholder="Search...">
@@ -90,11 +90,11 @@
 		<main class="p-4">
 			<div class="head-title mb-4">
 				<div class="left">
-					<h1 class="text-2xl font-bold">Users</h1>
+					<div class="text-2xl font-bold"> Reservation</div>
 				</div>
 			</div>
+			<p class="text-xl text-cyan-600 font-medium mt-8 pb-5">Data Users</p>
 			<div>
-				<h1 class="text-xl font-bold mb-2">Users Database</h1>
 
 				<?php
 				// Mengambil data dari database
