@@ -85,7 +85,7 @@
 			</div>
 			<p class="text-xl text-cyan-600 font-medium mt-8 pb-5">Data Users</p>
 			<div class="overflow-x-auto">
-				<table class="w-full table-auto border-collapse">
+				<table class="w-full table-auto border-collapse ">
 					<thead>
 						<tr class="bg-cyan-800 text-white">
 							<th class="border border-white px-4 py-2">User ID</th>
