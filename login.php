@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         if ($row['role'] == 'admin') {
-            header("Location: dashboard_admin.php");
+            header("Location: admin_dashboard.php");
             exit;
         } else {
             header("Location: user_dashboard.php");

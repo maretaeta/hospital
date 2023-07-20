@@ -24,9 +24,9 @@
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand">
-			<img src="./img/logo.png" class="w-12" />
-			<span class="text">Admin Dashboard</span>
+		<a href="admin_dashboard.php" class="brand pt-5">
+			<img src="./img/logo.png" class="w-20 pt-2" />
+			<span class="text-lg hidden md:flex">Admin Dashboard</span>
 		</a>
 		<ul class="side-menu top">
 			<li>
@@ -50,7 +50,7 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#" class="logout">
+				<a href="logout.php" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
 					<span class="text">Logout</span>
 				</a>
@@ -66,14 +66,14 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu'></i>
-			<a href="#" class="nav-link">Categories</a>
+			<a href="#" class="text-cyan-800 font-semibold text-xl">Hi, Admin</a>
 			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+				<div class="">
+					<!-- <input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button> -->
 				</div>
 			</form>
-			<input type="checkbox" id="switch-mode" hidden>
+			<!-- <input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
 			<a href="#" class="notification">
 				<i class='bx bxs-bell'></i>
@@ -81,57 +81,61 @@
 			</a>
 			<a href="#" class="profile">
 				<img src="img/people.png">
-			</a>
+			</a> -->
 		</nav>
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-		<main>
-			<div class="head-title">
+		<main class="container mx-auto px-4 py-8">
+			<div class="head-title flex items-center justify-between">
 				<div class="left">
-					<h1>Reservation</h1>
+					<div class="text-2xl font-bold"> Reservation</div>
 				</div>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download'></i>
+				<a href="#" class="btn-download flex items-center px-4 py-2 bg-blue-500 text-white rounded-md">
+					<i class='bx bxs-cloud-download mr-2'></i>
 					<span class="text">Download PDF</span>
 				</a>
 			</div>
-			
+
 			<div>
-				<h1>Reservations Database</h1>
+				<p class="text-xl text-cyan-600 font-medium mt-8">Data Reservations</p>
 				<br>
 
 				<?php
 				// Mengambil data dari database
-				$query = "SELECT * FROM reservasi"; // Ganti dengan nama tabel Anda
+				$query = "SELECT * FROM reservasi";
 				$result = mysqli_query($conn, $query);
 
 				// Menampilkan data
 				if (mysqli_num_rows($result) > 0) {
-					echo "<table style='border-collapse: collapse; cellspacing: 10px;'>";
-					echo "<tr>
-                <th style='border: 1px solid black;'>Reservasi ID</th>
-                <th style='border: 1px solid black;'>Nama</th>
-                <th style='border: 1px solid black;'>Alamat</th>
-                <th style='border: 1px solid black;'>Usia</th>
-                <th style='border: 1px solid black;'>Layanan</th>
-                <th style='border: 1px solid black;'>Tanggal</th>
-                <th style='border: 1px solid black;'>Waktu</th>
-              </tr>";
+					echo "<div class='overflow-x-auto'>
+        <table class='table-auto w-full border-collapse'>
+          <thead>
+            <tr class='bg-gray-200'>
+              <th class='border border-black px-4 py-2'>Reservasi ID</th>
+              <th class='border border-black px-4 py-2'>Nama</th>
+              <th class='border border-black px-4 py-2'>Alamat</th>
+              <th class='border border-black px-4 py-2'>Usia</th>
+              <th class='border border-black px-4 py-2'>Layanan</th>
+              <th class='border border-black px-4 py-2'>Tanggal</th>
+              <th class='border border-black px-4 py-2'>Waktu</th>
+            </tr>
+          </thead>
+          <tbody>";
 
 					while ($row = mysqli_fetch_assoc($result)) {
-						echo "<tr>";
-						echo "<td style='border: 1px solid black; text-align: center'>" . $row['reservasi_id'] . "</td>";
-						echo "<td style='border: 1px solid black;'>" . $row['nama'] . "</td>";
-						echo "<td style='border: 1px solid black;'>" . $row['alamat'] . "</td>";
-						echo "<td style='border: 1px solid black;'>" . $row['usia'] . "</td>";
-						echo "<td style='border: 1px solid black;'>" . $row['layanan'] . "</td>";
-						echo "<td style='border: 1px solid black;'>" . $row['tanggal'] . "</td>";
-						echo "<td style='border: 1px solid black;'>" . $row['waktu'] . "</td>";
+						echo "<tr class='bg-gray-100'>";
+						echo "<td class='border border-black px-4 py-2 text-center'>" . $row['reservasi_id'] . "</td>";
+						echo "<td class='border border-black px-4 py-2'>" . $row['nama'] . "</td>";
+						echo "<td class='border border-black px-4 py-2'>" . $row['alamat'] . "</td>";
+						echo "<td class='border border-black px-4 py-2'>" . $row['usia'] . "</td>";
+						echo "<td class='border border-black px-4 py-2'>" . $row['layanan'] . "</td>";
+						echo "<td class='border border-black px-4 py-2'>" . $row['tanggal'] . "</td>";
+						echo "<td class='border border-black px-4 py-2'>" . $row['waktu'] . "</td>";
 						echo "</tr>";
 					}
 
-					echo "</table>";
+					echo "</tbody></table></div>";
 				} else {
 					echo "Tidak ada data yang ditemukan.";
 				}
@@ -142,6 +146,8 @@
 
 			</div>
 		</main>
+
+
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->

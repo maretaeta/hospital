@@ -24,9 +24,9 @@
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="admin_dashboard.php" class="brand">
-			<img src="./img/logo.png" class="w-12" />
-			<span class="text">Admin Dashboard</span>
+		<a href="admin_dashboard.php" class="brand pt-5">
+			<img src="./img/logo.png" class="w-20 pt-2" />
+			<span class="text-lg hidden md:flex">Admin Dashboard</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
@@ -50,7 +50,7 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#" class="logout">
+				<a href="logout.php" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
 					<span class="text">Logout</span>
 				</a>
@@ -66,22 +66,28 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu'></i>
-			<a href="#" class="nav-link">Categories</a>
+			<!-- <a href="#" class="nav-link">Admin Dashboard</a> -->
 			<form action="#">
-				<div class="form-input">
-					<input type="search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+				<div class="">
+					<!-- <input type=" search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button> -->
 				</div>
 			</form>
-			<input type="checkbox" id="switch-mode" hidden>
+			<!-- <input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
 			<a href="#" class="notification">
 				<i class='bx bxs-bell'></i>
 				<span class="num">8</span>
-			</a>
-			<a href="#" class="profile">
-				<img src="img/people.png">
-			</a>
+			</a> -->
+			<!-- <a href="#" class="profile">
+				<button class="text-white bg-cyan-800 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center sm:text-base sm:px-6 sm:py-3">
+					Hi, Admin
+					<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+					</svg>
+				</button>
+			</a> -->
+
 		</nav>
 		<!-- NAVBAR -->
 
