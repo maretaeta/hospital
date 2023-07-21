@@ -21,6 +21,16 @@
 
 	include_once("db/koneksi.php"); ?>
 	<?php include("partials/header.php"); ?>
+	<?php
+		$total_reservasi = mysqli_query($conn, "SELECT COUNT(*) AS total_reservasi FROM reservasi");
+		$row = mysqli_fetch_assoc($total_reservasi);
+
+		$total_users = mysqli_query($conn, "SELECT COUNT(*) AS total_users FROM users");
+		$row1 = mysqli_fetch_assoc($total_users);
+
+		$total_layanan = mysqli_query($conn, "SELECT COUNT(*) AS total_layanan FROM poli");
+		$row2 = mysqli_fetch_assoc($total_layanan);
+	?>
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
@@ -66,27 +76,11 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu'></i>
-			<a href="#" class="text-cyan-800 font-semibold text-xl">Hi, Admin</a>
-			<div class="">
-				<!-- <input type=" search" placeholder="Search...">
-					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button> -->
-			</div>
+			<form action="#">
+				<div class="">
+				</div>
 			</form>
-			<!-- <input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
-			<a href="#" class="notification">
-				<i class='bx bxs-bell'></i>
-				<span class="num">8</span>
-			</a> -->
-			<!-- <a href="#" class="profile">
-				<button class="text-white bg-cyan-800 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center sm:text-base sm:px-6 sm:py-3">
-					Hi, Admin
-					<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-					</svg>
-				</button>
-			</a> -->
-
+			<a href="#" class="text-cyan-800 font-semibold text-xl">Hi, Admin</a>
 		</nav>
 		<!-- NAVBAR -->
 
@@ -102,22 +96,22 @@
 				<li>
 					<i class='bx bxs-calendar-check'></i>
 					<span class="text">
-						<h3>1020</h3>
+						<h3><?=$row ['total_reservasi']?></h3>
 						<p>Total Reservation</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-group'></i>
 					<span class="text">
-						<h3>2834</h3>
+						<h3><?=$row1 ['total_users']?></h3>
 						<p>Total Users</p>
 					</span>
 				</li>
 				<li>
-					<i class='bx bxs-dollar-circle'></i>
+					<i class='bx bxs-donate-heart'></i>
 					<span class="text">
-						<h3>$2543</h3>
-						<p>Total All</p>
+						<h3><?=$row2 ['total_layanan']?></h3>
+						<p>Total Service</p>
 					</span>
 				</li>
 			</ul>
