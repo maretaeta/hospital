@@ -80,7 +80,8 @@
 				<div class="">
 				</div>
 			</form>
-			<a href="#" class="text-cyan-800 font-semibold text-xl">Hi, Admin</a>
+			
+			<a href="#" class="text-cyan-800 font-semibold text-sm w-[150px] text-end md:text-xl ">Hi, Admin</a>
 		</nav>
 		<!-- NAVBAR -->
 
