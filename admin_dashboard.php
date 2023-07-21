@@ -89,7 +89,7 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<div class="text-3xl font-bold"> Dashboard</div>
+					<div class="text-3xl font-bold">Dashboard</div>
 				</div>
 			</div>
 
