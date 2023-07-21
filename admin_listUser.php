@@ -20,7 +20,7 @@
 	include_once("db/koneksi.php"); ?>
 	<?php include("partials/header.php"); ?>
 
-	<section id="sidebar">
+	<section id="sidebar" class="hide">
 		<a href="admin_dashboard.php" class="brand pt-5">
 			<img src="./img/logo.png" class="w-20 pt-2" />
 			<span class="text-lg hidden md:flex">Admin Dashboard</span>

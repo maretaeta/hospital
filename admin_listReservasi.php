@@ -41,7 +41,7 @@
 	<?php include("partials/header.php"); ?>
 
 	<!-- SIDEBAR -->
-	<section id="sidebar">
+	<section id="sidebar" class="hide">
 		<a href="admin_dashboard.php" class="brand pt-5">
 			<img src="./img/logo.png" class="w-20 pt-2" />
 			<span class="text-lg hidden md:flex">Admin Dashboard</span>
@@ -131,8 +131,8 @@
                                 <td class='border border-white px-4 py-2'>" . $row['tanggal'] . "</td>
                                 <td class='border border-white px-4 py-2'>" . $row['waktu'] . "</td>
 									<td class='border border-white px-4 py-2'>
-									<button onclick='openUpdateModal(" . $row['reservasi_id'] . ", \"" . $row['nama'] . "\", \"" . $row['alamat'] . "\", " . $row['usia'] . ", \"" . $row['layanan'] . "\", \"" . $row['tanggal'] . "\", \"" . $row['waktu'] . "\")' class='btn-update-modal'><i class='bx bxs-wrench'></i></button>|
-    								<a href='admin_deleteReservation.php?reservasi_id=" . $row['reservasi_id'] . "' class='btn-delete'><i class='bx bxs-trash'></i></a>
+									<button onclick='openUpdateModal(" . $row['reservasi_id'] . ", \"" . $row['nama'] . "\", \"" . $row['alamat'] . "\", " . $row['usia'] . ", \"" . $row['layanan'] . "\", \"" . $row['tanggal'] . "\", \"" . $row['waktu'] . "\")' class='btn-update-modal'><i class='bx bxs-wrench hover:text-blue-500'></i></button>|
+    								<a href='admin_deleteReservation.php?reservasi_id=" . $row['reservasi_id'] . "' class='btn-delete'><i class='bx bxs-trash hover:text-red-500'></i></a>
 								</td>
                             </tr>";
 							}
@@ -159,7 +159,7 @@
 				</button>
 
 				<h2 class="text-xl font-semibold text-cyan-900 my-4">Update Reservation</h2>
-				<form method="post" action="user_updateReservasi.php">
+				<form method="post" id="updateForm" action="admin_listReservasi.php">
 					<input type="hidden" name="reservation_id" id="reservation_id" value="">
 					<div class="mb-4">
 						<label for="nama" class="block text-gray-700 font-medium">Nama Lengkap</label>
@@ -201,7 +201,7 @@
 						</select>
 					</div>
 
-					<button onclick="updateReservation()">Save Changes</button>
+					<button onclick="updateReservation()" class="hover:text-blue-500">Save Changes</button>
 			</div>
 		</div>
 
@@ -229,9 +229,10 @@
 				const formData = new FormData(form);
 
 				const xhr = new XMLHttpRequest();
-				xhr.open("POST", "admin_updateReservation");
+				xhr.open("POST", "admin_updateReservation.php");
 				xhr.onreadystatechange = function() {
-					if (xhr.readyState === XMLHttpRequest.DONE) {
+					try {
+						if (xhr.readyState === XMLHttpRequest.DONE) {
 						if (xhr.status === 200) {
 							alert("Reservation updated successfully!");
 							location.reload();
@@ -239,6 +240,9 @@
 
 							alert("Failed to update the reservation. Please try again.");
 						}
+					}
+					} catch (error) {
+						console.log(error)
 					}
 				};
 				xhr.send(formData);
