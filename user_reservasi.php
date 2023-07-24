@@ -1,6 +1,8 @@
 <?php
+session_start();
 include_once("db/koneksi.php");
 
+$users_id = $_SESSION['user_id'];
 if (isset($_POST['reservasi'])) {
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
@@ -9,7 +11,7 @@ if (isset($_POST['reservasi'])) {
     $tanggal = $_POST['tanggal'];
     $waktu = $_POST['waktu'];
 
-    $query = "INSERT INTO reservasi (nama, alamat, usia, layanan, tanggal, waktu) VALUES ('$nama', '$alamat', '$usia', '$layanan', '$tanggal', '$waktu')";
+    $query = "INSERT INTO reservasi (users_id, nama, alamat, usia, layanan, tanggal, waktu) VALUES ('$users_id', '$nama', '$alamat', '$usia', '$layanan', '$tanggal', '$waktu')";
 
     if (mysqli_query($conn, $query)) {
         header("Location: user_success.php");
@@ -63,14 +65,16 @@ if (isset($_POST['reservasi'])) {
                         <label>
                             <p>Pilih Layanan</p>
                         </label>
+                        <?php
+                            $polis = query("SELECT * FROM poli");
+                        ?>
                         <select name="layanan" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800 " required>
                             <option value="">Pilih Poli</option>
-                            <option value="Poli Gigi">Poli Gigi</option>
-                            <option value="Poli Mata">Poli Mata</option>
-                            <option value="Poli Anak">Poli Anak</option>
-                            <option value="Poli Kandungan & Kebidanan">Poli Kandungan & Kebidanan</option>
-                            <option value="Dokter Umum">Dokter Umum</option>
-                            <option value="Fisioterapi">Fisioterapi</option>
+                            <?php foreach($polis as $c): ?>
+                                
+                                <option value="<?php $c['id'] ?>"><?= $c["nama"]; ?></option>
+                                
+                            <?php endforeach; ?>
                         </select>
                     </div>
 

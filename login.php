@@ -11,6 +11,10 @@ if (isset($_POST['login'])) {
 
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
+        $_SESSION["login"] = true;
+        $_SESSION["role"] = $row['role'];
+        $_SESSION["user_id"] =$row["users_id"];
+        $_SESSION["name"] =$row["name"];
         if ($row['role'] == 'admin') {
             header("Location: admin_dashboard.php");
             exit;
