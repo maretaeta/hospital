@@ -2,6 +2,16 @@
 session_start();
 include("db/koneksi.php");
 
+if(isset($_SESSION["login"])) {
+    if($_SESSION["role"] == "user") {
+        header("Location: user_dashboard.php");
+        exit;
+    } elseif($_SESSION["role"] == "dosen") {
+        header("Location: admin_dashboard.php?poli=all");
+        exit;
+    }
+}
+
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
