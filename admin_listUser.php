@@ -59,7 +59,7 @@
 	<section id="content">
 		<nav>
 			<i class='bx bx-menu'></i>
-			<a href="#" class="text-cyan-800 font-semibold text-xl">Hi, Admin</a>
+			<!-- <a href="#" class="text-cyan-800 font-semibold text-xl">Hi, Admin</a> -->
 			<form action="#">
 				<div class="">
 				</div>

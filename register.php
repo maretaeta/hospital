@@ -29,19 +29,27 @@ include('partials/header.php');
                 <h2 class="font-bold text-2xl text-[#002D74] text-center mb-10">Welcome to CareConnect</h2>
                 <form method="POST" class="flex flex-col gap-4">
                     <div>
-                        <label>Email</label>
+                        <label>
+                            <p>Email</p>
+                        </label>
                         <input class="p-2 rounded-md border border-cyan-800" type="email" name="email" placeholder="Enter Email" required />
                     </div>
                     <div class="relative">
-                        <label>Full Name </label>
+                        <label>
+                            <p>Full Name </p>
+                        </label>
                         <input class="p-2 rounded-md border border-cyan-800" type="text" name="name" placeholder="Enter Full Name" required />
                     </div>
                     <div class="relative">
-                        <label>Username </label>
+                        <label>
+                            <p>Username </p>
+                        </label>
                         <input class="p-2 rounded-md border border-cyan-800" type="text" name="username" placeholder="Enter Username" required />
                     </div>
                     <div class="relative mb-3">
-                        <label>Password </label>
+                        <label>
+                            <p>Password</p>
+                        </label>
                         <input class="p-2 rounded-md border border-cyan-800" type="password" name="password" placeholder="Enter Password" required />
                     </div>
                     <button type="submit" name="register" class="bg-[#002D74] rounded-md text-white p-2 hover:scale-105 duration-300">Daftar</button>
@@ -52,7 +60,7 @@ include('partials/header.php');
                 </div>
             </div>
             <div class="px-8 md:px-16 flex justify-center">
-                <img class="rounded-2xl " src="./img/image.png" />
+                <img class="rounded-2xl w-full" src="./img/image.png" />
             </div>
         </div>
     </div>

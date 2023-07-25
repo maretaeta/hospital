@@ -17,7 +17,7 @@ include_once("db/koneksi.php");
                 <h1 class="sm:text-5xl text-2xl md:leading-normal leading-10 text-slate-600 font-bold pb-3">
                     Effortless
 
-                    <span class="text-cyan-600 ">Hospital Reservations</span> at Your Fingertips
+                    <span class="text-cyan-600 ">Health Center Reservations</span> at Your Fingertips
                 </h1>
                 <p class="text-sm text-slate-400 pb-4 ">Find and book general specialists and nearby doctors easily. Simplify your healthcare journey with just a few taps. Download now for seamless access to quality healthcare. </p>
                 <button class="h-12 text-sm px-2 bg-cyan-800 rounded-xl text-white w-32 text-center hover:scale-110">
@@ -70,7 +70,7 @@ include_once("db/koneksi.php");
             <div class="pt-12 text-center">
                 <p class="font-bold text-2xl">Frequently Asked Question</p>
                 <p class="md:text-center md:pt-2 pb-2">
-                    Here are some commonly asked questions about our app that simplifies hospital reservations
+                    Here are some commonly asked questions about our app that simplifies health center reservations
                 </p>
             </div>
 
@@ -88,7 +88,7 @@ include_once("db/koneksi.php");
                         </div>
                         <div class="max-h-0 overflow-hidden peer-checked:max-h-full">
                             <p class="p-4 pl-7 text-sm">
-                                CareConnect is a mobile application that allows you to make hospital reservations with ease. It helps you find general specialists and locate the nearest doctors to handle your health problems.
+                                CareConnect is a mobile application that allows you to make health center reservations with ease. It helps you find general specialists and locate the nearest doctors to handle your health problems.
                             </p>
                         </div>
                     </div>

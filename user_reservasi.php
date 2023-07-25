@@ -66,14 +66,13 @@ if (isset($_POST['reservasi'])) {
                             <p>Pilih Layanan</p>
                         </label>
                         <?php
-                            $polis = query("SELECT * FROM poli");
+                        $polis = query("SELECT * FROM poli");
                         ?>
                         <select name="layanan" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800 " required>
                             <option value="">Pilih Poli</option>
-                            <?php foreach($polis as $c): ?>
-                                
-                                <option value="<?php $c['id'] ?>"><?= $c["nama"]; ?></option>
-                                
+                            <?php foreach ($polis as $c) : ?>
+                                <option value="<?= $c['nama']; ?>"><?= $c["nama"]; ?></option>
+
                             <?php endforeach; ?>
                         </select>
                     </div>

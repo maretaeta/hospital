@@ -233,14 +233,14 @@
 				xhr.onreadystatechange = function() {
 					try {
 						if (xhr.readyState === XMLHttpRequest.DONE) {
-						if (xhr.status === 200) {
-							alert("Reservation updated successfully!");
-							location.reload();
-						} else {
+							if (xhr.status === 200) {
+								alert("Reservation updated successfully!");
+								location.reload();
+							} else {
 
-							alert("Failed to update the reservation. Please try again.");
+								alert("Failed to update the reservation. Please try again.");
+							}
 						}
-					}
 					} catch (error) {
 						console.log(error)
 					}
