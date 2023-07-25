@@ -34,7 +34,13 @@ if (isset($_POST['reservasi'])) {
         <div class="hidden lg:block">
             <img src="./img/book.jpg" class="h-full w-full" />
         </div>
-        <div class="mx-auto px-10 grid justify-items-center pt-36">
+        <div class="mx-auto px-10 grid justify-items-center pt-24">
+            <a href="user_dashboard.php" class="text-cyan-600 flex items-center font-bold mb-4 absolute top-0 left-0 m-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back
+            </a>
             <div class="">
                 <h1 class="md:text-3xl text-2xl font-bold text-cyan-900 text-center">
                     Reservation
@@ -96,7 +102,7 @@ if (isset($_POST['reservasi'])) {
                         </select>
                     </div>
 
-                    <button type="submit" name="reservasi" class="bg-cyan-800 text-white w-full rounded-full mx-auto py-2 ml-2 mt-3">
+                    <button type="submit" name="reservasi" class="bg-cyan-800 text-white w-full xl:w-[500px]  rounded-full mx-auto py-2 ml-2 mt-3">
                         Reservasi
                     </button>
                 </form>
