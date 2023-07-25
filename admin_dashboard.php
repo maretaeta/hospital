@@ -86,43 +86,83 @@
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-		<main>
-			<div class="head-title">
-				<div class="left">
-					<div class="text-3xl font-bold">Dashboard</div>
-				</div>
-			</div>
+<main>
+    <div class="head-title">
+        <div class="left">
+            <div class="text-3xl font-bold">Dashboard</div>
+        </div>
+    </div>
 
-			<ul class="box-info">
-				<li>
-					<i class='bx bxs-calendar-check'></i>
-					<span class="text">
-						<h3><?=$row ['total_reservasi']?></h3>
-						<p>Total Reservation</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-group'></i>
-					<span class="text">
-						<h3><?=$row1 ['total_users']?></h3>
-						<p>Total Users</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-donate-heart'></i>
-					<span class="text">
-						<h3><?=$row2 ['total_layanan']?></h3>
-						<p>Total Service</p>
-					</span>
-				</li>
-			</ul>
+    <ul class="box-info">
+        <li>
+            <i class='bx bxs-calendar-check'></i>
+            <span class="text">
+                <h3><?=$row['total_reservasi']?></h3>
+                <p>Total Reservation</p>
+            </span>
+        </li>
+        <li>
+            <i class='bx bxs-group'></i>
+            <span class="text">
+                <h3><?=$row1['total_users']?></h3>
+                <p>Total Users</p>
+            </span>
+        </li>
+        <li>
+            <i class='bx bxs-donate-heart'></i>
+            <span class="text">
+                <h3><?=$row2['total_layanan']?></h3>
+                <p>Total Service</p>
+            </span>
+        </li>
+    </ul>
 
+    <div class="container mx-auto mt-10">
+        <canvas id="lineChart" style="max-width: 1500px;"></canvas>
+    </div>
+</main>
 
-
-		</main>
 	</section>
 
 	<script src="script.js"></script>
+	<!-- Tambahkan script untuk Chart.js dan pengolahan data -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Data dari PHP
+        var totalReservasi = <?=$row['total_reservasi']?>;
+        var totalUsers = <?=$row1['total_users']?>;
+        var totalLayanan = <?=$row2['total_layanan']?>;
+
+        // Data untuk diagram garis
+        var labels = ["Total Reservation", "Total Users", "Total Service"];
+        var values = [totalReservasi, totalUsers, totalLayanan];
+
+        // Konfigurasi chart
+        var ctx = document.getElementById("lineChart").getContext("2d");
+        var lineChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Data Overview",
+                    data: values,
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderWidth: 1,
+                }],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>
