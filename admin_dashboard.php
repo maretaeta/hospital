@@ -5,9 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
 	<title>Admin Dashboard</title>
@@ -18,18 +16,17 @@
 
 	session_start();
 
-
 	include_once("db/koneksi.php"); ?>
 	<?php include("partials/header.php"); ?>
 	<?php
-		$total_reservasi = mysqli_query($conn, "SELECT COUNT(*) AS total_reservasi FROM reservasi");
-		$row = mysqli_fetch_assoc($total_reservasi);
+	$total_reservasi = mysqli_query($conn, "SELECT COUNT(*) AS total_reservasi FROM reservasi");
+	$row = mysqli_fetch_assoc($total_reservasi);
 
-		$total_users = mysqli_query($conn, "SELECT COUNT(*) AS total_users FROM users");
-		$row1 = mysqli_fetch_assoc($total_users);
+	$total_users = mysqli_query($conn, "SELECT COUNT(*) AS total_users FROM users");
+	$row1 = mysqli_fetch_assoc($total_users);
 
-		$total_layanan = mysqli_query($conn, "SELECT COUNT(*) AS total_layanan FROM poli");
-		$row2 = mysqli_fetch_assoc($total_layanan);
+	$total_layanan = mysqli_query($conn, "SELECT COUNT(*) AS total_layanan FROM poli");
+	$row2 = mysqli_fetch_assoc($total_layanan);
 	?>
 
 	<!-- SIDEBAR -->
@@ -67,11 +64,7 @@
 			</li>
 		</ul>
 	</section>
-	<!-- SIDEBAR -->
 
-
-
-	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
 		<nav>
@@ -80,89 +73,90 @@
 				<div class="">
 				</div>
 			</form>
-			
+
 			<a href="#" class="text-cyan-800 font-semibold text-sm w-[150px] text-end md:text-xl ">Hi, Admin</a>
 		</nav>
-		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-<main>
-    <div class="head-title">
-        <div class="left">
-            <div class="text-3xl font-bold">Dashboard</div>
-        </div>
-    </div>
+		<main>
+			<div class="head-title">
+				<div class="text-3xl font-bold">Dashboard</div>
+			</div>
 
-    <ul class="box-info">
-        <li>
-            <i class='bx bxs-calendar-check'></i>
-            <span class="text">
-                <h3><?=$row['total_reservasi']?></h3>
-                <p>Total Reservation</p>
-            </span>
-        </li>
-        <li>
-            <i class='bx bxs-group'></i>
-            <span class="text">
-                <h3><?=$row1['total_users']?></h3>
-                <p>Total Users</p>
-            </span>
-        </li>
-        <li>
-            <i class='bx bxs-donate-heart'></i>
-            <span class="text">
-                <h3><?=$row2['total_layanan']?></h3>
-                <p>Total Service</p>
-            </span>
-        </li>
-    </ul>
+			<ul class="box-info grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+				<li class="bg-white rounded-lg p-4 shadow-md">
+					<i class='bx bxs-calendar-check text-4xl text-cyan-800'></i>
+					<span class="text">
+						<h3><?= $row['total_reservasi'] ?></h3>
+						<p>Total Reservation</p>
+					</span>
+				</li>
+				<li class="bg-white rounded-lg p-4 shadow-md">
+					<i class='bx bxs-group text-4xl text-cyan-800'></i>
+					<span class="text">
+						<h3><?= $row1['total_users'] ?></h3>
+						<p>Total Users</p>
+					</span>
+				</li>
+				<li class="bg-white rounded-lg p-4 shadow-md">
+					<i class='bx bxs-donate-heart text-4xl text-cyan-800'></i>
+					<span class="text">
+						<h3><?= $row2['total_layanan'] ?></h3>
+						<p>Total Service</p>
+					</span>
+				</li>
+			</ul>
 
-    <div class="container mx-auto mt-10">
-        <canvas id="lineChart" style="max-width: 1500px;"></canvas>
-    </div>
-</main>
+			<div class="container mx-auto mt-10">
+				<div class="bg-white rounded-lg shadow-md p-6">
+					<h3 class="text-cyan-800 text-xl font-semibold mb-3">Chart</h3>
+					<div class="w-full" style="height: 400px;">
+						<canvas id="lineChart"></canvas>
+					</div>
+				</div>
+			</div>
+		</main>
 
 	</section>
 
 	<script src="script.js"></script>
-	<!-- Tambahkan script untuk Chart.js dan pengolahan data -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Data dari PHP
-        var totalReservasi = <?=$row['total_reservasi']?>;
-        var totalUsers = <?=$row1['total_users']?>;
-        var totalLayanan = <?=$row2['total_layanan']?>;
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        // Data untuk diagram garis
-        var labels = ["Total Reservation", "Total Users", "Total Service"];
-        var values = [totalReservasi, totalUsers, totalLayanan];
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Data dari PHP
+			var totalReservasi = <?= $row['total_reservasi'] ?>;
+			var totalUsers = <?= $row1['total_users'] ?>;
+			var totalLayanan = <?= $row2['total_layanan'] ?>;
 
-        // Konfigurasi chart
-        var ctx = document.getElementById("lineChart").getContext("2d");
-        var lineChart = new Chart(ctx, {
-            type: "line",
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "Data Overview",
-                    data: values,
-                    borderColor: "rgba(75, 192, 192, 1)",
-                    backgroundColor: "rgba(75, 192, 192, 0.2)",
-                    borderWidth: 1,
-                }],
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    });
-</script>
+			// Data untuk diagram garis
+			var labels = ["Total Reservation", "Total Users", "Total Service"];
+			var values = [totalReservasi, totalUsers, totalLayanan];
 
+			// Konfigurasi chart
+			var ctx = document.getElementById("lineChart").getContext("2d");
+			var lineChart = new Chart(ctx, {
+				type: "line",
+				data: {
+					labels: labels,
+					datasets: [{
+						label: "Data Reservasi",
+						data: values,
+						borderColor: "rgba(75, 192, 192, 1)",
+						backgroundColor: "rgba(75, 192, 192, 0.2)",
+						borderWidth: 3,
+					}],
+				},
+				options: {
+					scales: {
+						y: {
+							beginAtZero: true
+						}
+					}
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>

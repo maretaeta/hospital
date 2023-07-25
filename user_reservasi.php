@@ -108,5 +108,6 @@ if (isset($_POST['reservasi'])) {
 <script>
     flatpickr("#datepicker", {
         dateFormat: "Y/m/d",
+        minDate: "today",
     });
 </script>
