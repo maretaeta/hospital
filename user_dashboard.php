@@ -2,6 +2,10 @@
 session_start();
 
 include_once("db/koneksi.php");
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
 ?>
 
 <?php include("partials/header.php"); ?>

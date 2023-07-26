@@ -137,9 +137,9 @@ if (isset($_POST['delete_reservation'])) {
                     <label class="block text-gray-700 font-medium">Waktu</label>
                     <select name="waktu" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                         <option value="">Pilih Jam</option>
-                        <option value="08.00 - 11.00 am">08.00 - 11.00 am</option>
-                        <option value="13.00 - 18.00 pm">13.00 - 18.00 pm</option>
-                        <option value="19.00 - 22.00 pm">19.00 - 22.00 pm</option>
+                        <option value="08.00 - 10.00">08.00 - 10.00</option>
+                        <option value="10.00 - 12.00">10.00 - 12.00</option>
+                        <option value="13.00 - 15.00">13.00 - 15.00</option>
                     </select>
                 </div>
 
