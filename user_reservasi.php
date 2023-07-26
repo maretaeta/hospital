@@ -96,9 +96,9 @@ if (isset($_POST['reservasi'])) {
                         </label>
                         <select name="waktu" class="mt-1 ml-2 w-full xl:w-[500px] rounded-md pl-2 h-10 text-lg bg-transparent border border-cyan-800" required>
                             <option value="">Pilih Jam</option>
-                            <option value="08.00 - 11.00 am">08.00 - 10.00 pagi</option>
-                            <option value="13.00 - 18.00 pm">10.00 - 12.00 siang</option>
-                            <option value="19.00 - 22.00 pm">13.00 - 15.00 sore</option>
+                            <option value="08.00 - 10.00">08.00 - 10.00</option>
+                            <option value="10.00 - 12.00">10.00 - 12.00</option>
+                            <option value="13.00 - 15.00 pm">13.00 - 15.00</option>
                         </select>
                     </div>
 
